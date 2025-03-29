@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farid & Prilly's Wedding</title>
+    <!-- For production, install Tailwind CSS properly: https://tailwindcss.com/docs/installation -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-rose-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold heading-font text-rose-600">F&P</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-rose-600 transition">Home</a>
+                    <a href="#about" class="hover:text-rose-600 transition">Our Story</a>
+                    <a href="#gallery" class="hover:text-rose-600 transition">Gallery</a>
+                    <a href="#details" class="hover:text-rose-600 transition">Wedding Details</a>
+                    <a href="#rsvp" class="hover:text-rose-600 transition">RSVP</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="mobile-menu" id="mobile-menu">
+                    <div class="container flex flex-col space-y-4 py-4">
+                        <a href="#home" class="hover:text-rose-600 transition">Home</a>
+                        <a href="#about" class="hover:text-rose-600 transition">Our Story</a>
+                        <a href="#gallery" class="hover:text-rose-600 transition">Gallery</a>
+                        <a href="#details" class="hover:text-rose-600 transition">Wedding Details</a>
+                        <a href="#rsvp" class="hover:text-rose-600 transition">RSVP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 animate-fade-in">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="bg-cover bg-center absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="container mx-auto px-6 z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold heading-font text-white mb-4">Farid & Prilly</h1>
+            <p class="text-xl md:text-2xl text-white mb-8">Are Getting Married</p>
+            <p class="text-white mb-12">June 12, 2024</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#rsvp" class="bg-white text-rose-600 px-8 py-3 rounded-full font-medium hover:bg-rose-50 transition">RSVP</a>
+                <a href="#details" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-rose-600 transition">Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl heading-font text-rose-600 mb-12">Counting Down To Our Big Day</h2>
+            <div class="flex justify-center space-x-4 md:space-x-8">
+                <div class="text-center">
+                    <div id="days" class="text-4xl md:text-5xl font-bold text-gray-800">120</div>
+                    <div class="text-gray-600">Days</div>
+                </div>
+                <div class="text-center">
+                    <div id="hours" class="text-4xl md:text-5xl font-bold text-gray-800">12</div>
+                    <div class="text-gray-600">Hours</div>
+                </div>
+                <div class="text-center">
+                    <div id="minutes" class="text-4xl md:text-5xl font-bold text-gray-800">45</div>
+                    <div class="text-gray-600">Minutes</div>
+                </div>
+                <div class="text-center">
+                    <div id="seconds" class="text-4xl md:text-5xl font-bold text-gray-800">30</div>
+                    <div class="text-gray-600">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="about" class="py-20 bg-rose-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl heading-font text-center text-rose-600 mb-16">Our Story</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Couple" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl heading-font text-rose-600 mb-4">How We Met</h3>
+                    <p class="text-gray-700 mb-6">We first met in college during a mutual friend's birthday party. Farid spilled his drink on Prilly's dress, and instead of getting angry, she just laughed it off. That moment sparked a friendship that eventually grew into love.</p>
+                    <h3 class="text-2xl heading-font text-rose-600 mb-4">The Proposal</h3>
+                    <p class="text-gray-700">On our 5th anniversary, Farid planned a surprise trip to Bali. At sunset on the beach, he got down on one knee with a beautiful ring. Of course, I said yes!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl heading-font text-center text-rose-600 mb-16">Our Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 4" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1524502397800-2eea0587c2e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 5" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gallery Image 6" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details Section -->
+    <section id="details" class="py-20 bg-rose-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl heading-font text-center text-rose-600 mb-16">Wedding Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <i class="fas fa-church text-4xl text-rose-600 mb-4"></i>
+                        <h3 class="text-2xl heading-font text-rose-600 mb-4">Ceremony</h3>
+                        <p class="text-gray-700 mb-2">Saturday, June 12, 2024</p>
+                        <p class="text-gray-700 mb-2">3:00 PM</p>
+                        <p class="text-gray-700 mb-4">St. Mary's Cathedral</p>
+                        <p class="text-gray-600">123 Church Street, Jakarta</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <i class="fas fa-glass-cheers text-4xl text-rose-600 mb-4"></i>
+                        <h3 class="text-2xl heading-font text-rose-600 mb-4">Reception</h3>
+                        <p class="text-gray-700 mb-2">Saturday, June 12, 2024</p>
+                        <p class="text-gray-700 mb-2">6:00 PM</p>
+                        <p class="text-gray-700 mb-4">Grand Ballroom, The Ritz Hotel</p>
+                        <p class="text-gray-600">456 Luxury Avenue, Jakarta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-3xl heading-font text-center text-rose-600 mb-12">RSVP</h2>
+            <form class="bg-rose-50 p-8 rounded-lg shadow-lg">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                </div>
+                <div class="mb-6">
+                    <label for="guests" class="block text-gray-700 mb-2">Number of Guests</label>
+                    <select id="guests" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Will you attend?</label>
+                    <div class="flex space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attendance" value="yes" class="text-rose-600" checked>
+                            <span class="ml-2">Yes, I'll be there</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attendance" value="no" class="text-rose-600">
+                            <span class="ml-2">Sorry, can't make it</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 mb-2">Message (Optional)</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-rose-600 text-white py-3 rounded-lg hover:bg-rose-700 transition">Submit RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rose-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl heading-font mb-6">Farid & Prilly</h2>
+            <p class="mb-8">June 12, 2024</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-white hover:text-rose-300"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-white hover:text-rose-300"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="#" class="text-white hover:text-rose-300"><i class="fab fa-twitter text-2xl"></i></a>
+            </div>
+            <p class="text-sm text-rose-300">© 2024 Farid & Prilly's Wedding. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.remove('open');
+            });
+        });
+
+        // Countdown timer
+        const weddingDate = new Date("June 12, 2024 15:00:00").getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
